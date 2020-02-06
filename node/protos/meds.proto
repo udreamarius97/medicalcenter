@@ -1,0 +1,28 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "io.grpc.examples.routeguide";
+option java_outer_classname = "RouteGuideProto";
+option objc_class_prefix = "RTG";
+
+package routeguide;
+
+// Interface exported by the server.
+service RouteGuide {
+
+  rpc ListMeds(Pacient) returns (stream Medication) {}
+}
+
+message Medication {
+
+  string name_med=1;
+
+  string dozaj=2;
+
+  string tratment=3;
+}
+
+message Pacient {
+
+  int32 id_pacient=1;
+}

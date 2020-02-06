@@ -1,0 +1,279 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:sch="http://www.howtodoinjava.com/xml/school" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://www.howtodoinjava.com/xml/school" targetNamespace="http://www.howtodoinjava.com/xml/school">
+    <wsdl:types>
+        <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" targetNamespace="http://www.howtodoinjava.com/xml/school">
+
+            <xs:element name="StudentDetailsRequest">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="name" type="xs:string"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+
+            <xs:element name="StudentDetailsResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="Student" type="tns:Student"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+
+            <xs:complexType name="Student">
+                <xs:sequence>
+                    <xs:element name="name" type="xs:string"/>
+                    <xs:element name="standard" type="xs:int"/>
+                    <xs:element name="address" type="xs:string"/>
+                </xs:sequence>
+            </xs:complexType>
+
+            <xs:complexType name="Activity">
+                <xs:sequence>
+                    <xs:element name="id" type="xs:int"/>
+                    <xs:element name="startDate" type="xs:string"/>
+                    <xs:element name="endDate" type="xs:string"/>
+                    <xs:element name="activity" type="xs:string"/>
+                    <xs:element name="user" type="xs:string"/>
+                    <xs:element name="behavior" type="xs:string"/>
+                </xs:sequence>
+            </xs:complexType>
+
+            <xs:element name="ActivityDetailsRequest">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="name" type="xs:string"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+
+            <xs:element name="ActivityDetailsResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="Activity" type="tns:Activity" maxOccurs="unbounded" minOccurs="1"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+
+            <xs:element name="ActivityDetailsRequest2">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="Activity" type="tns:Activity"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+
+            <xs:element name="ActivityDetailsResponse2">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="mesaj" type="xs:string"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+
+            <xs:complexType name="MedDay">
+                <xs:sequence>
+                    <xs:element name="id" type="xs:int"/>
+                    <xs:element name="user" type="xs:string"/>
+                    <xs:element name="day" type="xs:string"/>
+                    <xs:element name="medication" type="xs:string"/>
+                    <xs:element name="interval" type="xs:string"/>
+                    <xs:element name="isTaken" type="xs:string"/>
+                </xs:sequence>
+            </xs:complexType>
+
+            <xs:element name="MedDayDetailsRequest">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="name" type="xs:string"/>
+                        <xs:element name="day" type="xs:string"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+
+            <xs:element name="MedDayDetailsResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="MedDay" type="tns:MedDay" maxOccurs="unbounded" minOccurs="1"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+
+            <xs:complexType name="Recomandation">
+                <xs:sequence>
+                    <xs:element name="id" type="xs:int"/>
+                    <xs:element name="patient" type="xs:string"/>
+                    <xs:element name="caregiver" type="xs:string"/>
+                    <xs:element name="message" type="xs:string"/>
+                </xs:sequence>
+            </xs:complexType>
+
+            <xs:element name="RecomandationDetailsRequest">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="Recomandation" type="tns:Recomandation"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+
+        </xs:schema>
+    </wsdl:types>
+    <wsdl:message name="StudentDetailsRequest">
+        <wsdl:part element="tns:StudentDetailsRequest" name="StudentDetailsRequest">
+        </wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="StudentDetailsResponse">
+        <wsdl:part element="tns:StudentDetailsResponse" name="StudentDetailsResponse">
+        </wsdl:part>
+    </wsdl:message>
+    <wsdl:portType name="StudentDetailsPort">
+        <wsdl:operation name="StudentDetails">
+            <wsdl:input message="tns:StudentDetailsRequest" name="StudentDetailsRequest">
+            </wsdl:input>
+            <wsdl:output message="tns:StudentDetailsResponse" name="StudentDetailsResponse">
+            </wsdl:output>
+        </wsdl:operation>
+    </wsdl:portType>
+    <wsdl:binding name="StudentDetailsPortSoap11" type="tns:StudentDetailsPort">
+        <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+        <wsdl:operation name="StudentDetails">
+            <soap:operation soapAction=""/>
+            <wsdl:input name="StudentDetailsRequest">
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output name="StudentDetailsResponse">
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+    </wsdl:binding>
+    <wsdl:service name="StudentDetailsPortService">
+        <wsdl:port binding="tns:StudentDetailsPortSoap11" name="StudentDetailsPortSoap11">
+            <soap:address location="http://localhost:8080/service/student-details"/>
+        </wsdl:port>
+    </wsdl:service>
+
+    <wsdl:message name="ActivityDetailsRequest">
+        <wsdl:part element="tns:ActivityDetailsRequest" name="ActivityDetailsRequest">
+        </wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="ActivityDetailsResponse">
+        <wsdl:part element="tns:ActivityDetailsResponse" name="ActivityDetailsResponse">
+        </wsdl:part>
+    </wsdl:message>
+    <wsdl:portType name="ActivityDetailsPort">
+        <wsdl:operation name="ActivityDetails">
+            <wsdl:input message="tns:ActivityDetailsRequest" name="ActivityDetailsRequest">
+            </wsdl:input>
+            <wsdl:output message="tns:ActivityDetailsResponse" name="ActivityDetailsResponse">
+            </wsdl:output>
+        </wsdl:operation>
+    </wsdl:portType>
+    <wsdl:binding name="ActivityDetailsPortSoap" type="tns:ActivityDetailsPort">
+        <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+        <wsdl:operation name="ActivityDetails">
+            <soap:operation soapAction=""/>
+            <wsdl:input name="ActivityDetailsRequest">
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output name="ActivityDetailsResponse">
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+    </wsdl:binding>
+    <wsdl:service name="ActivityDetailsPortService">
+        <wsdl:port binding="tns:ActivityDetailsPortSoap" name="ActivityDetailsPortSoap11">
+            <soap:address location="http://localhost:8080/service/student-details"/>
+        </wsdl:port>
+    </wsdl:service>
+
+    <wsdl:message name="ActivityDetailsRequest2">
+        <wsdl:part element="tns:ActivityDetailsRequest2" name="ActivityDetailsRequest2">
+        </wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="ActivityDetailsResponse2">
+        <wsdl:part element="tns:ActivityDetailsResponse2" name="ActivityDetailsResponse2">
+        </wsdl:part>
+    </wsdl:message>
+    <wsdl:portType name="ActivityDetailsPort2">
+        <wsdl:operation name="ActivityDetails2">
+            <wsdl:input message="tns:ActivityDetailsRequest2" name="ActivityDetailsRequest2">
+            </wsdl:input>
+            <wsdl:output message="tns:ActivityDetailsResponse2" name="ActivityDetailsResponse2">
+            </wsdl:output>
+        </wsdl:operation>
+    </wsdl:portType>
+    <wsdl:binding name="ActivityDetailsPortSoap2" type="tns:ActivityDetailsPort2">
+        <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+        <wsdl:operation name="ActivityDetails2">
+            <soap:operation soapAction=""/>
+            <wsdl:input name="ActivityDetailsRequest2">
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output name="ActivityDetailsResponse2">
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+    </wsdl:binding>
+    <wsdl:service name="ActivityDetailsPortService2">
+        <wsdl:port binding="tns:ActivityDetailsPortSoap2" name="ActivityDetailsPortSoap2">
+            <soap:address location="http://localhost:8080/service/student-details"/>
+        </wsdl:port>
+    </wsdl:service>
+
+    <wsdl:message name="MedDayDetailsRequest">
+        <wsdl:part element="tns:MedDayDetailsRequest" name="MedDayDetailsRequest">
+        </wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="MedDayDetailsResponse">
+        <wsdl:part element="tns:MedDayDetailsResponse" name="MedDayDetailsResponse">
+        </wsdl:part>
+    </wsdl:message>
+    <wsdl:portType name="MedDayDetailsPort">
+        <wsdl:operation name="MedDayDetails">
+            <wsdl:input message="tns:MedDayDetailsRequest" name="MedDayDetailsRequest">
+            </wsdl:input>
+            <wsdl:output message="tns:MedDayDetailsResponse" name="MedDayDetailsResponse">
+            </wsdl:output>
+        </wsdl:operation>
+    </wsdl:portType>
+    <wsdl:binding name="MedDayDetailsPortSoap" type="tns:MedDayDetailsPort">
+        <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+        <wsdl:operation name="MedDayDetails">
+            <soap:operation soapAction=""/>
+            <wsdl:input name="MedDayDetailsRequest">
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output name="MedDayDetailsResponse">
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+    </wsdl:binding>
+    <wsdl:service name="MedDayDetailsPortService">
+        <wsdl:port binding="tns:MedDayDetailsPortSoap" name="MedDayDetailsPortSoap11">
+            <soap:address location="http://localhost:8080/service/student-details"/>
+        </wsdl:port>
+    </wsdl:service>
+
+    <wsdl:message name="RecomandationDetailsRequest">
+        <wsdl:part element="tns:RecomandationDetailsRequest" name="RecomandationDetailsRequest">
+        </wsdl:part>
+    </wsdl:message>
+    <wsdl:portType name="RecomandationDetailsPort">
+        <wsdl:operation name="RecomandationDetails">
+            <wsdl:input message="tns:RecomandationDetailsRequest" name="RecomandationDetailsRequest">
+            </wsdl:input>
+        </wsdl:operation>
+    </wsdl:portType>
+    <wsdl:binding name="RecomandationDetailsPortSoap" type="tns:RecomandationDetailsPort">
+        <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+        <wsdl:operation name="RecomandationDetails">
+            <soap:operation soapAction=""/>
+            <wsdl:input name="RecomandationDetailsRequest">
+                <soap:body use="literal"/>
+            </wsdl:input>
+        </wsdl:operation>
+    </wsdl:binding>
+    <wsdl:service name="RecomandationDetailsPortService">
+        <wsdl:port binding="tns:RecomandationDetailsPortSoap" name="RecomandationDetailsPortSoap11">
+            <soap:address location="http://localhost:8080/service/student-details"/>
+        </wsdl:port>
+    </wsdl:service>
+</wsdl:definitions>

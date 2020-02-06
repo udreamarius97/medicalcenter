@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="ec6d1e8d-21b3-4022-9247-3f084e797ef8" name="Default Changelist" comment="" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ProjectId" id="1TaZ05jOnjFWy0B1Q5lpg2RAZyz" />
+  <component name="PropertiesComponent">
+    <property name="RequestMappingsPanelOrder0" value="0" />
+    <property name="RequestMappingsPanelOrder1" value="1" />
+    <property name="RequestMappingsPanelWidth0" value="75" />
+    <property name="RequestMappingsPanelWidth1" value="75" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager">
+    <configuration name="SpringBootProducerApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="spring-boot-rabbitmq-producer" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.javainuse.SpringBootProducerApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="ec6d1e8d-21b3-4022-9247-3f084e797ef8" name="Default Changelist" comment="" />
+      <created>1573699940830</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1573699940830</updated>
+      <workItem from="1573699943259" duration="1896000" />
+      <workItem from="1573756268310" duration="3785000" />
+      <workItem from="1573921080179" duration="4109000" />
+      <workItem from="1574007930351" duration="1954000" />
+      <workItem from="1574184555418" duration="1805000" />
+      <workItem from="1574271153192" duration="805000" />
+      <workItem from="1574311013565" duration="615000" />
+      <workItem from="1574369690715" duration="1403000" />
+      <workItem from="1574371128247" duration="8854000" />
+      <workItem from="1574396290009" duration="3004000" />
+      <workItem from="1576704362558" duration="2703000" />
+      <workItem from="1580799982346" duration="3137000" />
+      <workItem from="1580800152699" duration="922000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+</project>
