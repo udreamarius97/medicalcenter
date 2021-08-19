@@ -29,7 +29,7 @@ public class RabbitMQWebController {
 	public String producer() throws InterruptedException, IOException {
 
 		List<MonitoredData> monitoredDatas = fileUtils.citesteFisier();
-		int[] pacientsIds=new int[]{15,16,17};
+		int[] pacientsIds=new int[]{3,9};
 		for(MonitoredData m:monitoredDatas) {
 			Patient e=new Patient();
 			e.setIdPacient(String.valueOf(pacientsIds[new Random().nextInt(pacientsIds.length)]));

@@ -12,4 +12,4 @@ public class SpringBootProducerApplication {
 }
 
 
-//http://localhost:8080/javainuse-rabbitmq/producer
+//http://localhost:8082/javainuse-rabbitmq/producer
