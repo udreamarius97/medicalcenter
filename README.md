@@ -12,7 +12,7 @@ This README would normally document whatever steps are necessary to get your app
 
 To run this project u must have installed java 11 , node lts , MySql Workbench , Xampp, IntellIj and Docker.
 Here are the setting i used ti install docker :https://www.sitepoint.com/docker-windows-10-home/
-First you clone your project using git clone  https://udreamarius@bitbucket.org/udreamarius/ds2019_30245_udreamarius_assigment_1.git
+First you clone your project using git clone  https://github.com/udreamarius97/medicalcenter.git
 Open MySql and import the database from the projects
 In xampp start Apache and MySql
 open a terminat in project folder and run : docker-compose up
